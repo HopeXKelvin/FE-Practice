@@ -1,3 +1,51 @@
-<html>
-	test1.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2015-10-09-1</title>
+	<script type="text/javascript" src="js/jq/jquery-1.11.3.js"></script>
+	<script>
+	// var x=42;
+	// console.log(x);
+	// var message=(function(x){
+	// 	return function(){
+	// 		console.log("x is "+x);
+	// 	};
+	// })(x);
+	// message();
+	// x=12;
+	// console.log(x);
+	// message();
+
+	$(document).ready(function(){
+		//select all "p" elements
+		var paragraphs=$("p");
+		console.log(paragraphs.length);
+		paragraphs=$.makeArray(paragraphs);
+		var dupes=$.makeArray($(".duplicate"));
+		paragraphs=paragraphs.concat(dupes);
+		console.log(paragraphs.length);
+		paragraphs=$.unique(paragraphs);
+		console.log(paragraphs.length);
+		var index=$.inArray("6",paragraphs);
+		console.log(index);
+
+		var numArray=[1,2,3,4];
+		$.each(numArray,function(index,value){
+			value=value*2;
+			console.log("index is :"+index+" new value is "+ value);
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p class="duplicate"></p>
+	<p class="duplicate"></p>
+	<p class="duplicate"></p>
+	<p></p>
+</body>
 </html>
