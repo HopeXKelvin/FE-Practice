@@ -24,3 +24,18 @@ jq对象具有一些非常有用的方法，简称为工具方法。工具方法
 --6.数据
 	ajax
 
+
+2015-10-10
+--------选择和操作DOM元素---------
+选择元素的语法：
+$(selector,[context])
+jQuery(selector,[context])
+有的时候 我们可能只想搜索DOM的一个子树，要实现这样的功能，可以向jQuery()函数传入第2个参数，为搜索指定一个上下文。
+
+后代选择器：$("ancestor descendant")
+属性选择器：$("[attributeName='string2match']")
+一些属性选择器采用了正则表达式的表示法，可以匹配字符串中的一部分，例如匹配属性的开头，或者匹配属性的结尾。
+例如：$("[attributeName^='value']")//匹配属性开头
+      $("[attributeName$='value']")//匹配属性结尾
+
+

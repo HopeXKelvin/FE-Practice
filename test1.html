@@ -35,7 +35,13 @@
 			value=value*2;
 			console.log("index is :"+index+" new value is "+ value);
 		});
+
+		var aContent=$("a","div.a-div");
+		console.log(aContent.html());
 		
+		var userInfo=$("[id~='zombie']").length;
+		console.log(userInfo);
+
 	});
 	</script>
 </head>
@@ -47,5 +53,13 @@
 	<p class="duplicate"></p>
 	<p class="duplicate"></p>
 	<p></p>
+
+	<div class="a-div"><a href="">123</a></div>
+	<div><a href="">456</a></div>
+	<div><a href="">789</a></div>
+
+	<div id="greenzombie"></div>
+	<div id="zombie man"></div>
+	<div id="mad scientist"></div>
 </body>
 </html>
