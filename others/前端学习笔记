@@ -38,4 +38,31 @@ jQuery(selector,[context])
 例如：$("[attributeName^='value']")//匹配属性开头
       $("[attributeName$='value']")//匹配属性结尾
 
+--关于jQuery新的事件绑定机制on()的使用--
+从jq1.7开始，jQuery引入了全新的事件绑定机制，on()和off()两个函数统一处理事件绑定。
+live()已经不能在用了，最新的jq版本里面用on()方法代替live()
+以前 live()写法：
+$("#list li").live("click",function(){
+	//function code here
+});
 
+新的 on()写法：
+$(document).on("click","#list li",function(){
+	//functin code here
+});
+
+
+替换delegate()
+
+以前 delegate()写法：
+$("#list").delegate("li","click",function(){
+	//function code here
+});
+
+现在 on()写法：
+$("#list").on("click","li",function(){
+	//function code here
+});
+这两个就是参数调换了以下位置，其他基本没什么变化.
+
+jQuery推出on()的目的有2个，一是为了统一接口，二是为了提高性能，所以从现在开始用on()替换bind(),live(),delegate().
