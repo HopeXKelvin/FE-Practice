@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax-practice</title>
+	<script type="text/javascript" src="js/jq/jquery-1.11.3.js"></script>
+	<script>
+	$.ajax({
+		url:"test1.html",
+		dataType:"html",
+		success:function(r){
+			console.log("made it");
+		},
+		error:function(r){
+			console.log("Something didn't work");
+		}
+	});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
