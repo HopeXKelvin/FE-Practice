@@ -16,7 +16,7 @@
 		}
 	});*/
 
-	$.ajax({
+	/*$.ajax({
 		url:"xml/book.xml",
 		dataType:"xml",
 		success:function(data){
@@ -29,10 +29,74 @@
 		error:function(data){
 			console.log("unable to process request!");
 		}
-	});
+	});*/
+	
+	//ajax load html
+	/*var xhr=new XMLHttpRequest();
+	xhr.onload=function(){
+		if(xhr.status===200){
+			console.log("Server status is ok!");
+			document.getElementById("content").innerHTML=xhr.responseText;
+		}
+	};
+	xhr.open("GET","test2.html",true);
+	xhr.send(null);*/
+
+	//ajax load xml
+	/*var xhr=new XMLHttpRequest();
+	xhr.onload=function(){
+		var reponse=xhr.responseXML;
+		var events=reponse.getElementsByTagName("events");
+
+		for(var i=0;i<events.length;i++){
+			var container,location,date,map,city,newline;
+			container=document.createElement("div");
+			container.className="event";
+
+			map=document.createElement("img");
+			map.setAttribute("src",getNodeValue(events[i],"map"));
+			map.appendChild(document.createTextNode(getNodeValue(events[i],"map")));
+			container.appendChild(map);
+
+			location=document.createElement("p");
+			city=document.createElement("b");
+			newline=document.createElement("br");
+			city.appendChild(document.createTextNode(getNodeValue(events[i],"location")));
+			location.appendChild(newline);
+			location.insertBefore(city,newline);
+			location.appendChild(document.createTextNode(getNodeValue(events[i],"date")));
+			container.appendChild(location);
+
+			document.getElementById("content").appendChild(container);
+		}
+		function getNodeValue(obj,tag){
+			return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+		}
+	};
+	xhr.open("GET","xml/events.xml",true);
+	xhr.send(null);*/
+
+	//ajax load json
+	var xhr=new XMLHttpRequest();
+	xhr.onload=function(){
+		if(xhr.status===200){
+			responseObject=JSON.parse(xhr.responseText);
+			var newContent="";
+			for(var i=0;i<responseObject.events.length;i++){
+				newContent+="<div class='event'>";
+				newContent+="<img src='"+responseObject.events[i].map+"' ";
+				newContent+="alt='"+responseObject.events[i].location+"'/>"
+				newContent+="<p><b>"+responseObject.events[i].location+"</b></p>";
+				newContent+="</div>";
+			}
+			document.getElementById("content").innerHTML=newContent;
+		}
+	};
+	xhr.open("GET","datas/events.json",true);
+	xhr.send(null);
 	</script>
 </head>
 <body>
-	
+	<div id="content"></div>
 </body>
 </html>

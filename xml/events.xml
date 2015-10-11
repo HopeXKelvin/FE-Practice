@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<all-events>
+	<events>
+		<location>San Fransico, CA</location>
+		<date>May 1</date>
+		<map>img/map-ca.png</map>
+	</events>
+	<events>
+		<location>Austin ,TX</location>
+		<date>May 15</date>
+		<map>img/map-tx.png</map>
+	</events>
+	<events>
+		<location>New York,NY</location>
+		<date>May 25</date>
+		<map>img/map-ny.png</map>
+	</events>
+</all-events>

@@ -95,3 +95,27 @@ Ajax技术的核心是XMLHttpRequest对象
 $(selector).load(url,[data],[success(response,status,XHR)])
 $.load()方法接受3个参数：第一个参数是一个目标url,第二个参数是一个可选的数据对象，第三个参数是一个可选的success函数,该函数本身又接收一个响应字符串，一个状态字符串和一个XMLHttpRequest对象.
 
+-----使用Ajax加载HTML------
+基准代码如下：
+var xhr=new XMLHttpRequest();//创建XMLHttpRequest 对象
+xhr.onload=function(){
+	if(xhr.status===200){	//检测连接状态，200为连接就绪
+		console.log("Server status is ok!");
+		document.getElementById("content").innerHTML=xhr.responseText;//加载html内容
+	}
+};
+xhr.open("GET","test2.html",true);//准备请求
+xhr.send(null);//发送请求.
+
+-----关于 Ajax加载JSON数据-----
+将JSON格式的数据转换成Javascript对象，叫做对象反序列化
+用 json对象的 parse()方法完成
+将对象转换为JSON表示格式的字符串，叫做对象的序列化
+用 json对象的 stringify()方法完成.
+
+------Ajax 跨域请求-------
+一般有三种方法：
+--1.web服务器上的代理文件
+--2.JSONP(JSON with Padding)
+--3.跨来源资源共享
+
