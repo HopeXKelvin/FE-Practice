@@ -71,3 +71,27 @@ jQuery推出on()的目的有2个，一是为了统一接口，二是为了提高
 现在的Ajax指的是在客户端与服务器之间采用异步通信方式，使用javascript创建交互式web和动态应用程序的一种开发方法。
 Ajax技术的核心是XMLHttpRequest对象
 
+2015-10-11
+------关于ubuntu下搭载php开发环境的一些配置问题------
+在ubuntu下搭载好了 apache2的服务器，要进行一些自定义配置
+首先要做的是改变apache2的默认目录到当前的开发目录：
+---方法1
+	apache2的默认目录配置在/etc/apache2/sites-enabled/000-default 文件中
+	找到该文件中的DocumentRoot一项，将/var/www 改成自己的开发目录就可以了。
+---方法2
+	这种方法不需要改变默认目录配置，只需要在/var/www下建立一个到自己目录的链接.
+	假设自己的开发目录是 /home/kelvin/dev/web 那么只需要输入以下面命令：
+	sudo ln -s /home/kelvin/dev/web /var/www/web
+	这样就可以通过http://localhost/web 访问自己的开发目录了.
+****以上非常重要*****
+
+-----关于 打开，关闭，重启 apache2的命令------
+打开： sudo /etc/init.d/apache2 start
+关闭： sudo /etc/init.d/apache2 stop
+重启： sudo /etc/init.d/apache2 restart
+
+---jQuery具有一个极为有用的方法：$.load() 它的功能是发起Ajax请求，并将返回的HTML片段加载到匹配的元素中.所有这些功能都在一次方法调用中实现.
+该方法的语法如下：
+$(selector).load(url,[data],[success(response,status,XHR)])
+$.load()方法接受3个参数：第一个参数是一个目标url,第二个参数是一个可选的数据对象，第三个参数是一个可选的success函数,该函数本身又接收一个响应字符串，一个状态字符串和一个XMLHttpRequest对象.
+

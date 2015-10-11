@@ -5,7 +5,7 @@
 	<title>ajax-practice</title>
 	<script type="text/javascript" src="js/jq/jquery-1.11.3.js"></script>
 	<script>
-	$.ajax({
+	/*$.ajax({
 		url:"test1.html",
 		dataType:"html",
 		success:function(r){
@@ -13,6 +13,21 @@
 		},
 		error:function(r){
 			console.log("Something didn't work");
+		}
+	});*/
+
+	$.ajax({
+		url:"xml/book.xml",
+		dataType:"xml",
+		success:function(data){
+			console.log("make begin");
+			$(data).find("chapter").each(function(){
+				$("document").append($(this).find("title").text());
+			});
+			console.log("make end");
+		},
+		error:function(data){
+			console.log("unable to process request!");
 		}
 	});
 	</script>
