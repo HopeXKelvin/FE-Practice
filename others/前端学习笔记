@@ -147,3 +147,13 @@ static $count=0;
 ----PHP包含和请求文件-----
 include , include_once
 require , requier_once
+
+2015-10-13
+------mysql入门-----
+--创建数据库
+CREATE DATABASE databasename;
+
+--创建用户
+GRANT ALL ON database.* TO 'kelvin'@'localhost' IDENTIFIED BY 'password';
+然后可以通过设置的用户的用户名和密码 进入相应的数据库.
+
