@@ -87,7 +87,7 @@
 	$object2=new Tiger();
 	echo "Tigers have...<br/>";
 	echo "Fur : ".$object2->fur."<br/>";
-	echo "stripes : ".$object2->stripes;
+	echo "stripes : ".$object2->stripes."<br/>";
 
 	class Wildcat{
 		public $fur;
@@ -101,5 +101,13 @@
 			parent::__construct();
 			$this->stripes="TRUE";
 		}
+	}
+
+	printf("<font color='#%X%X%X'>Hello</font>",64,127,255);
+	echo "<br/>";
+	if(file_exists("filetest.txt")){
+		echo "File exits";
+	}else{
+		echo "File does not exits";
 	}
 ?>
