@@ -157,3 +157,13 @@ CREATE DATABASE databasename;
 GRANT ALL ON database.* TO 'kelvin'@'localhost' IDENTIFIED BY 'password';
 然后可以通过设置的用户的用户名和密码 进入相应的数据库.
 
+2015-10-14
+------PHP连接Mysql--------
+不论编写的PHP脚本多么简单或多么高深，要与数据交互，则必须有以下几个步骤：
+1.连接到一个已安装好的Mysql.
+2.使用正确的Mysql数据库
+3.发送SQL语句到数据库
+4.获取查询返回结果
+5.进一步处理结果
+根据程序用途，步骤3，4，5需要做相应的改动.
+
