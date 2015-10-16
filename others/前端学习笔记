@@ -200,3 +200,7 @@ mysql -u user -ppassword -D publications < publications.sql
 mysql -u user -ppassword -D publications < classics.sql
 此处只将classics表恢复到publications数据库中.
 
+
+2015-10-16
+--关于php 中的 <<<_END和 _END使用要注意的地方:
+以<<<End开始标记开始，以End结束标记结束，结束标记必须顶头写，不能有缩进和空格，且在结束标记末尾要有分号.
