@@ -230,4 +230,10 @@ These two tips can help you to decide whether to use a Map or an object:
 *Use maps over objects when keys are unknown until run time,and when all keys are the same type and all values are the same type.
 *Use objects when there is logic that opertaes on individual elements. 
 
- 
+--js是基于原型的语言
+基于原型的语言冰不存在类和实例的区别，它只有对象，基于原型的语言具有所谓原型对象(prototypical object) 的概念。原型对象可以作为一个模板，新对象可以从中获得原型的属性。任何对象都可以指定其自身的属性，既可以是创建时也可以在运行时创建，而且，任何对象都可以作为另一个对象的原型(prototype),从而允许后者共享前者的属性.
+
+--子类和继承
+js通过将构造器函数与原型对象相关联的方式来实现继承，这样，你可以创建完全一样的Employee-Manager示例，不过需要使用略微不同的术语。首先，定义Employee构造器函数，指定name和dept属性；然后，定义Manager构造器函数，指定reports属性。最后，将一个新的Employee对象赋值给Manager构造器函数的prototype属性。这样，当创建一个Manager对象时，它将从Employee对象中继承name 和 dept属性.
+
+
