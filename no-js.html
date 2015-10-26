@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+	#test1{
+		width: 100px;
+		height: 100px;
+		background-color: #eee;
+		border: 1px solid #000;
+	}
+	</style>
+	<script>
+	/*function getStyle(obj,attr,value){
+		if (!value) {
+			if (obj.currentStyle) {
+				return obj.currentStyle(attr);
+			}else{
+				obj.getComputedStyle(attr,false);
+			}
+		}else{
+			obj.style[attr]=value;
+		}
+	}
+
+	window.onload=function(){
+		var testDiv=document.getElementById("test1");
+		alert(getStyle(testDiv,"width","200px"));
+	};*/
+
+	window.onload=function(){
+		var y=1;
+		function test(){
+			var x=20;
+			var xValue=function xValue(){
+				x++;
+				alert(x);
+				return x;
+			};
+			// alert(x);
+		}
+		test();
+
+		function f1(){
+			var n=999;
+			function f2(){
+				alert(n);
+			}
+			return f2;
+		}
+		var result=f1();
+		result();
+
+
+		var counter=(function(){
+			var privateCounter=0;
+			function changeBy(val){
+				privateCounter+=val;
+			}
+			return {
+				increment:function(){
+					changeBy(1);
+				},
+				decrement:function(){
+					changeBy(-1);
+				},
+				value:function(){
+					return privateCounter;
+				}
+			};
+		})();
+
+		console.log(counter.value());
+		counter.increment();
+		counter.increment();
+		console.log(counter.value());
+		counter.decrement();
+		console.log(counter.value());
+	};
+	</script>
+</head>
+<body>
+	<div id="test1">
+		
+	</div>
+</body>
+</html>

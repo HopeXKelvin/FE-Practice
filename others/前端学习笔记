@@ -204,3 +204,30 @@ mysql -u user -ppassword -D publications < classics.sql
 2015-10-16
 --关于php 中的 <<<_END和 _END使用要注意的地方:
 以<<<End开始标记开始，以End结束标记结束，结束标记必须顶头写，不能有缩进和空格，且在结束标记末尾要有分号.
+
+2015-10-24
+MDN>Web技术文档>JavaScript>JavaScript指南>语法和数据类型
+
+--用var或let声明时未赋初值的变量,值会被设定为undefined.
+--你可以使用undefined来确定变量是否已赋值
+--undefined值在布尔类型环境中会被当作false
+--undefined值在数值类型环境中会被转换为NaN
+--当对一个空变量求值时,空值null在数值类型环境中会被当作0来对待.而在布尔类型环境中会被当作false.
+
+--数据类型的转换：
+---1.在包含加法运算符的数字和字符串表达式中,JavaScript会把数字值转换为字符串.在包含其他运算符时,JavaScript不会把数字变为字符.
+--2. 字符串转换为数字:parseInt(),parseFloat().将字符串转换为数字的另一种方法是使用单目加法运算符.
+
+2015-10-26
+MDN>Web技术文档>JavaScript>JavaScript指南>函数
+--闭包
+闭包是js中最强大的特性之一。js允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。但是，外部函数却不能够访问定义在内部函数中的变量和函数。这给内部函数的变量提供了一定的安全性。而且，当内部函数生存周期大于外部函数时，由于内部函数可以访问外部函数的作用域，定义在外部函数的变量和函数的生存周期就会大于外部函数本身。当内部函数以某一种方式被任何一个外部函数作用域访问时，一个闭包就产生了。
+
+
+--map 和 对象 object
+Object and Map compared
+These two tips can help you to decide whether to use a Map or an object:
+*Use maps over objects when keys are unknown until run time,and when all keys are the same type and all values are the same type.
+*Use objects when there is logic that opertaes on individual elements. 
+
+ 
